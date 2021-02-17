@@ -1,8 +1,0 @@
-Access: /
-Error: Error: ENOENT: no such file or directory, open ''
-Access: /favicon.ico
-Error: Error: ENOENT: no such file or directory, open 'favicon.ico'
-Access: /sample_dir/text_file
-Extension detected: 
-Access: /favicon.ico
-Error: Error: ENOENT: no such file or directory, open 'favicon.ico'

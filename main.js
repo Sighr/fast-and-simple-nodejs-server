@@ -17,6 +17,7 @@ const server = http.createServer((req, res) => {
 		if (err) {
 			console.log(err);
 			fs.writeSync(fd, `Error: ${err}\n`);
+			res.statusCode = 404;
 			res.end();
 			return;
 		}
