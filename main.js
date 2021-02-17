@@ -8,7 +8,7 @@ const port = 3000;
 const fd = fs.openSync("access.log", "a");
 
 const server = http.createServer((req, res) => {
-	fs.writeSync(fd, `Access: ${req.url}`);
+	fs.writeSync(fd, `Access: ${req.url}\n`);
 	// console.log(req.url);
 	const p = req.url.slice(1);
 	fs.readFile(p, (err, data) => {
@@ -16,12 +16,12 @@ const server = http.createServer((req, res) => {
 
 		if (err) {
 			console.log(err);
-			fs.writeSync(fd, `Error: ${err}`);
+			fs.writeSync(fd, `Error: ${err}\n`);
 			res.end();
 			return;
 		}
 		const extension = path.extname(p);
-		fs.writeSync(fd, `Extension detected: ${extension}`);
+		fs.writeSync(fd, `Extension detected: ${extension}\n`);
 		if (extension === ".jpg") {
 			res.setHeader('Content-Type', 'image/jpeg');
 		}
